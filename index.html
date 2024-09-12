@@ -48,7 +48,7 @@
 <body>
   <h1>بحبك اه ولا لا</h1>
   <div class="container">
-    <img id="image" src="/stickman.jpg">
+    <img id="image" src="./stickman.jpg">
   </div>
   <div class="container">
     <button id="yes">اه</button>
@@ -63,13 +63,13 @@
     container.style.position = 'relative';
     yesButton.addEventListener('click', () => {
       // Change image to a GIF (replace with your GIF URL)
-      image.src = "/200w.gif";
+      image.src = "./200w.gif";
     });
 
     noButton.addEventListener('click', () => {
       // Get the container element (assuming the buttons are within a container)
       const container = noButton.parentElement;
-      image.src = "/haram.jpg";
+      image.src = "./haram.jpg";
       // Generate random position within the container boundaries
       const randomX = Math.floor(Math.random() * (container.clientWidth - noButton.clientWidth));
       const randomY = Math.floor(Math.random() * (container.clientHeight - noButton.clientHeight));
