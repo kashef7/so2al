@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Reem+Kufi+Fun:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      font-family: "Reem Kufi Fun", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: <weight>;
+      font-style: normal;
+    }
+    body {
+      background-color: pink;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%; /* Added to center the image horizontally */
+    }
+    img {
+      width: auto; /* Added to prevent image overflow */
+      height: auto; /* Added to prevent image overflow */
+    }
+    button {
+      background-color: white; /* Green */
+      color: black;
+      border-radius: 12px;
+      border-color: black;
+      border-width: 3px;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 15px 34px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>بحبك اه ولا لا</h1>
+  <div class="container">
+    <img id="image" src="/world/stickman.jpg">
+  </div>
+  <div class="container">
+    <button id="yes">اه</button>
+    <button id="no">لا</button>
+  </div>
+
+  <script>
+    const yesButton = document.getElementById('yes');
+    const noButton = document.getElementById('no');
+    const image = document.getElementById('image');
+    const container = document.querySelector('.container');
+    container.style.position = 'relative';
+    yesButton.addEventListener('click', () => {
+      // Change image to a GIF (replace with your GIF URL)
+      image.src = "/world/200w.gif";
+    });
+
+    noButton.addEventListener('click', () => {
+      // Get the container element (assuming the buttons are within a container)
+      const container = noButton.parentElement;
+      image.src = "/world/haram.jpg";
+      // Generate random position within the container boundaries
+      const randomX = Math.floor(Math.random() * (container.clientWidth - noButton.clientWidth));
+      const randomY = Math.floor(Math.random() * (container.clientHeight - noButton.clientHeight));
+
+      // Update button position
+      noButton.style.position = 'absolute';
+      noButton.style.left = `${randomX}px`;
+      noButton.style.top = `${randomY}px`;
+
+    });
+  </script>
+</body>
+</html>
